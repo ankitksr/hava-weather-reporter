@@ -7,12 +7,11 @@ from rest_framework.authtoken import views
 from rest_framework.routers import DefaultRouter
 
 from hava.views import CurrentWeatherViewSet, DailyWeatherViewSet
-from users.views import UserCreateViewSet, UserViewSet
+from users.views import UserViewSet
 
 
 router = DefaultRouter()
 router.register(r"users", UserViewSet)
-router.register(r"users", UserCreateViewSet)
 router.register(r"currentweather", CurrentWeatherViewSet)
 router.register(r"dailyweather", DailyWeatherViewSet)
 
