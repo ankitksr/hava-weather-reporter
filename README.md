@@ -1,6 +1,6 @@
 # Hava - Weather Reporter
 
-**Hava** is a simple weather reporter displaying weather information for the following cities using [OpenWeather] (https://openweathermap.org/) APIs:
+**Hava** is a simple weather reporter displaying weather information for the following cities using [OpenWeather](https://openweathermap.org/) APIs:
 - Bangalore
 - Mumbai
 - New York
@@ -8,7 +8,7 @@
 - London
 - Mexico City
 
-**Hava** is built using Django REST Framework and ReactJs. It is containerized with Docker and leverages [Ofelia] (https://github.com/mcuadros/ofelia) for job scheduling on local Docker setups. The **Current Weather API** is scheduled to be called at every 5 minutes interval while the **One Call API** is called every 24 hours by default. This can be customized from the `docker-compose` file.
+**Hava** is built using Django REST Framework and ReactJs. It is containerized with Docker and leverages [Ofelia](https://github.com/mcuadros/ofelia) for job scheduling on local Docker setups. The **Current Weather API** is scheduled to be called at every 5 minutes interval while the **One Call API** is called every 24 hours by default. This can be customized from the `docker-compose` file.
 
 
 ## Local setup
