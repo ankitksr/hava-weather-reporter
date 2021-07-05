@@ -13,7 +13,7 @@
 
 ## Local setup
 - Create a `.env` file at the root level with `OPENWEATHER_API_KEY` specified in `VAR=VAL` format. Custom database credentials can also be specified here. This project uses [dj_database_url](https://github.com/kennethreitz/dj-database-url).
-- On your terminal, simply do `docker-compose up --build`, and wait for the containers to build. Eventually, you'll be able to see the **Dashboard** page by going to `[http://127.0.0.1/](http://127.0.0.1/)`.
+- On your terminal, simply do `docker-compose up --build`, and wait for the containers to build. Eventually, you'll be able to see the **Dashboard** page by going to [http://127.0.0.1/](http://127.0.0.1/).
 - The jobs for fetching weather details are run when containers are started and thereafter at scheduled intervals.
 - Connect to the database container using:
     ```
