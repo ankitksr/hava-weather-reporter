@@ -52,6 +52,7 @@ class DailyWeather extends Component {
 
     render() {
         const { data, loaded, temperature_unit } = this.state;
+        const tempFieldSuffix = temperature_unit === 'c' ? '(℃)' : '(°F)';
         const columns = [
             {
                 field: 'city',
@@ -76,7 +77,7 @@ class DailyWeather extends Component {
                 field: 'min_temp',
                 renderHeader: (params) => (
                     <strong>
-                        {'MIN TEMPERATURE (℃)'}
+                        {`MIN TEMPERATURE ${tempFieldSuffix}`}
                     </strong>
                 ),
                 width: 230,
@@ -86,7 +87,7 @@ class DailyWeather extends Component {
                 field: 'max_temp',
                 renderHeader: (params) => (
                     <strong>
-                        {'MAX TEMPERATURE (℃)'}
+                        {`MAX TEMPERATURE ${tempFieldSuffix}`}
                     </strong>
                 ),
                 width: 230,
@@ -167,7 +168,7 @@ class DailyWeather extends Component {
                         <FormControl component="fieldset" align="left">
                             <FormLabel component="legend">Temperature Unit</FormLabel>
                             <RadioGroup aria-label="temperature_unit" name="temperatureUnit" value={temperature_unit} onChange={this.handleChange}>
-                                <FormControlLabel value="f" control={<Radio />} label="Farenheit" />
+                                <FormControlLabel value="f" control={<Radio />} label="Fahrenheit" />
                                 <FormControlLabel value="c" control={<Radio />} label="Celsius" />
                             </RadioGroup>
                         </FormControl>

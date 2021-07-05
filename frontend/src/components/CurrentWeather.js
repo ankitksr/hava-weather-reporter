@@ -52,6 +52,7 @@ class CurrentWeather extends Component {
 
     render() {
         const { data, loaded, temperature_unit } = this.state;
+        const tempFieldSuffix = temperature_unit === 'c' ? '(℃)' : '(°F)';
         const columns = [
             {
                 field: 'col1',
@@ -66,7 +67,7 @@ class CurrentWeather extends Component {
                 field: 'col2',
                 renderHeader: (params) => (
                     <strong>
-                        {'AVG TEMPERATURE (℃)'}
+                        {`AVG TEMPERATURE ${tempFieldSuffix}`}
                     </strong>
                 ),
                 width: 230,
@@ -76,7 +77,7 @@ class CurrentWeather extends Component {
                 field: 'col3',
                 renderHeader: (params) => (
                     <strong>
-                        {'MIN TEMPERATURE (℃)'}
+                        {`MIN TEMPERATURE ${tempFieldSuffix}`}
                     </strong>
                 ),
                 width: 230,
@@ -86,7 +87,7 @@ class CurrentWeather extends Component {
                 field: 'col4',
                 renderHeader: (params) => (
                     <strong>
-                        {'MAX TEMPERATURE (℃)'}
+                        {`MAX TEMPERATURE ${tempFieldSuffix}`}
                     </strong>
                 ),
                 width: 230,
@@ -126,7 +127,7 @@ class CurrentWeather extends Component {
                 field: 'col8',
                 renderHeader: (params) => (
                     <strong>
-                        {'FEELS LIKE (℃)'}
+                        {`FEELS LIKE ${tempFieldSuffix}`}
                     </strong>
                 ),
                 width: 170,
@@ -166,7 +167,7 @@ class CurrentWeather extends Component {
                         <FormControl component="fieldset" align="left">
                             <FormLabel component="legend">Temperature Unit</FormLabel>
                             <RadioGroup aria-label="temperature_unit" name="temperatureUnit" value={temperature_unit} onChange={this.handleChange}>
-                                <FormControlLabel value="f" control={<Radio />} label="Farenheit" />
+                                <FormControlLabel value="f" control={<Radio />} label="Fahrenheit" />
                                 <FormControlLabel value="c" control={<Radio />} label="Celsius" />
                             </RadioGroup>
                         </FormControl>
