@@ -21,6 +21,5 @@
     psql -U <uname>
     ```
 
-## Deployment
+## Demo
 A live demo of this project is deployed [here](https://hava-weather-reporter.herokuapp.com/). The demo does not however run scheduled jobs to fetch latest weather data.
-
