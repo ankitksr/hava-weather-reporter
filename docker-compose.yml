@@ -17,6 +17,8 @@ services:
     command: >
       bash -c "python wait_for_postgres.py &&
                ./manage.py migrate &&
+               ./manage.py fetch_current_weather_data &&
+               ./manage.py fetch_daily_weather_data &&
                ./manage.py runserver 0.0.0.0:8000"
     depends_on:
       - postgres
