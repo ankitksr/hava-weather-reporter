@@ -1,0 +1,51 @@
+version: "3.7"
+services:
+  postgres:
+    image: postgres:11.6
+  django:
+    build: ./backend
+    volumes:
+      - ./backend:/app/backend
+      - ./docs:/app/docs
+    ports:
+      - "8000:8000"
+    env_file: .env
+    environment:
+      - DJANGO_SETTINGS_MODULE=backend.settings.development
+    stdin_open: true
+    tty: true
+    command: >
+      bash -c "python wait_for_postgres.py &&
+               ./manage.py migrate &&
+               ./manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - postgres
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-exec.fetch_current_weather.schedule: "@every 5m"
+      ofelia.job-exec.fetch_current_weather.command: "./manage.py fetch_current_weather_data"
+      ofelia.job-exec.fetch_daily_weather.schedule: "@every 1m"
+      ofelia.job-exec.fetch_daily_weather.command: "./manage.py fetch_daily_weather_data"
+  react:
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+      # One-way volume to use node_modules from inside image
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    depends_on:
+      - django
+    command: npm start
+  ofelia:
+    image: mcuadros/ofelia:latest
+    restart: always
+    depends_on:
+      - django
+    command: daemon --docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+

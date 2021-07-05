@@ -1,0 +1,10 @@
+# Master branches
+https://github.com/django/django/archive/main.tar.gz
+https://github.com/encode/django-rest-framework/archive/master.tar.gz
+
+whitenoise==5.2.0
+black==21.6b0
+
+# For the persistence stores
+psycopg2-binary==2.8.6
+dj-database-url==0.5.0
