@@ -24,7 +24,7 @@ services:
       ofelia.enabled: "true"
       ofelia.job-exec.fetch_current_weather.schedule: "@every 5m"
       ofelia.job-exec.fetch_current_weather.command: "./manage.py fetch_current_weather_data"
-      ofelia.job-exec.fetch_daily_weather.schedule: "@every 1m"
+      ofelia.job-exec.fetch_daily_weather.schedule: "@every 24h"
       ofelia.job-exec.fetch_daily_weather.command: "./manage.py fetch_daily_weather_data"
   react:
     build: ./frontend
@@ -33,7 +33,7 @@ services:
       # One-way volume to use node_modules from inside image
       - /app/node_modules
     ports:
-      - "3000:3000"
+      - "80:3000"
     environment:
       - NODE_ENV=development
     stdin_open: true
