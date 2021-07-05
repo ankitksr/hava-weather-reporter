@@ -1,4 +1,4 @@
-# Hava - Weather Reporter =======================
+# Hava - Weather Reporter
 
 **Hava** is a simple weather reporter displaying weather information for the following cities using [OpenWeather] (https://openweathermap.org/) APIs:
 - Bangalore
@@ -16,4 +16,4 @@ On your terminal, simply do `docker-compose up --build`, and wait for the contai
 
 
 ## Deployment
-A live instance of this project is deployed [here]()
+A live instance of this project is deployed [here]().
