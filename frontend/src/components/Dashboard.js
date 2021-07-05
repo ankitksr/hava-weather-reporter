@@ -9,10 +9,10 @@ function Dashboard() {
     return (
         <div>
             <header className="App-header">
-                <Typography variant="h3" color="inherit" paragraph="true" align="center">
+                <Typography variant="h3" color="inherit" paragraph={true} align="center">
                     Dashboard
                 </Typography>
-                <Grid direction="column" xs="3">
+                <Grid direction="column" xs={3}>
                     <Button
                         variant="contained"
                         color="primary"
