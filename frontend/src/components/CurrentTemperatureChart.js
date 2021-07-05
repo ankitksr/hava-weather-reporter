@@ -109,7 +109,6 @@ class CurrentTemperatureChart extends Component {
 
   render() {
     const { chartOptions } = this.state;
-    console.log(chartOptions)
     return (
       <div>
         <HighchartsReact

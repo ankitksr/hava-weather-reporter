@@ -4,8 +4,6 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-// import logo from './logo.svg';
-// import axios from 'axios';
 import './App.css';
 import NavBar from './components/NavBar';
 import CurrentWeather from './components/CurrentWeather';

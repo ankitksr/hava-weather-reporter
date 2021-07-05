@@ -24,7 +24,6 @@ class CurrentWeather extends Component {
 
     getCurrentWeatherData = () => {
         let url = '/api/v1/currentweather/';
-        console.log(url);
         axios
             .get(url).then(({ data }) => {
                 if (data) {
